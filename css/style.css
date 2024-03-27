@@ -1,0 +1,209 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+header {
+  background-color: #001c7d;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.info__place {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 35px;
+}
+
+.info__title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.info__subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+.yellow-text {
+  color: #f8c51e;
+}
+
+.infobox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 31px;
+}
+
+.info__name-link {
+  position: relative;
+  border-bottom: 1px dashed #f8c51e;
+}
+
+.info__name-link::before {
+  content: "";
+  background-image: url("../img/photo_student.jpg");
+  position: absolute;
+  top: -165px;
+  right: -634px;
+  width: 180px;
+  height: 180px;
+  opacity: 0;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  transition: all 0.7s ease;
+}
+
+.info__name-link:hover::before {
+  opacity: 1;
+}
+
+.info__name,
+.info__group {
+  font-weight: 500;
+}
+
+.info__name span,
+.info__group span {
+  font-weight: 700;
+}
+
+.lab-works {
+  margin: 30px 0 40px;
+}
+
+.lab-works__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.lab-works__item {
+  background-color: #001c7d;
+  max-width: 140px;
+  border-radius: 140px;
+  text-align: center;
+  border: 2px solid #001c7d;
+  transition: all 0.3s ease;
+}
+
+.active {
+  border: 2px dashed #001c7d !important;
+}
+
+.active,
+.lab-works__item:hover,
+.lab-description__item:hover {
+  background-color: #f8c51e !important;
+}
+
+.active .lab-works__link,
+.active .lab-description__link,
+.lab-works__item:hover .lab-works__link,
+.lab-description__item:hover .lab-description__link {
+  color: #001c7d !important;
+  font-weight: 700 !important;
+}
+
+.lab-works__link {
+  color: #fff;
+  font-weight: 400;
+  font-size: 15px;
+  display: block;
+  height: 100%;
+  padding: 12px 15px;
+}
+
+.lab-description__wrapper {
+  display: grid;
+  grid-template-columns: 311px auto;
+  gap: 49px;
+  margin-bottom: 40px;
+}
+
+.lab-description__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lab-description__item {
+  background-color: #001c7d;
+  border-radius: 20px;
+  max-width: 311px;
+  border: 2px solid #001c7d;
+  transition: all 0.3s ease;
+}
+
+.lab-description__link {
+  color: #fff;
+  display: block;
+  height: 100%;
+  padding: 15px 10px 15px 15px;
+}
+
+.short {
+  margin-left: 40px;
+}
+
+.lab-description__text {
+  background-color: #f5f5f5;
+  border: 2px solid #f8c51e;
+  border-radius: 20px 0 0 20px;
+  padding: 33px 33px 0;
+  overflow-y: auto;
+  font-size: 17px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.lab-description__text span {
+  font-weight: 600;
+}
+
+.lab-description__text p {
+  margin-bottom: 20px;
+}
+
+.description__text-topic {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.description__text-icon {
+  width: 20px;
+}
+
+.description__text-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: underline !important;
+}
+
+.description__text-link:hover {
+  color: #001c7d;
+}
+
+.description__text-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
