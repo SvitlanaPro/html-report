@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function scrollToBottomIfNeeded() {
     // Проверяем, является ли текущая страница одной из тех, где нужна прокрутка вниз
-    var pagesWithScroll = ['lab-1.3.html', 'lab-1.4.html', 'lab-1.5.html', 'lab-1.6.html']; // добавьте сюда все страницы, где нужна прокрутка вниз
+    var pagesWithScroll = ['lab-1.3.html', 'lab-1.4.html', 'lab-1.5.html', 'lab-1.6.html', 'lab-2.1.html', 'lab-2.2.html', 'lab-2.3.html', 'lab-2.4.html', 'lab-2.5.html', 'lab-2.6.html', 'lab-2.7.html', 'lab-2.8.html']; // добавьте сюда все страницы, где нужна прокрутка вниз
     if (pagesWithScroll.includes(window.location.pathname.split('/').pop())) {
         scrollToBottom();
     }
