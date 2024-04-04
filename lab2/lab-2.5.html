@@ -78,19 +78,21 @@
                         <aside class="lab-description__aside">
                             <ul class="lab-description__list">
                                 <li class="lab-description__item">
-                                    <a href="./lab-2.1.html" class="lab-description__link">Тема, мета ЛР №2. Місце розташування
+                                    <a href="./lab-2.1.html" class="lab-description__link">Тема, мета ЛР №2. Місце
+                                        розташування
                                         сайту, звіту</a>
                                 </li>
                                 <li class="lab-description__item">
-                                    <a href="./lab-2.2.html" class="lab-description__link">Способи підключення стилів</a>
+                                    <a href="./lab-2.2.html" class="lab-description__link">Способи підключення
+                                        стилів</a>
                                 </li>
                                 <li class="lab-description__item big">
                                     <a href="./lab-2.3.html" class="lab-description__link">СЕЛЕКТОРИ</a>
                                 </li>
-                                <li class="lab-description__item short active">
+                                <li class="lab-description__item short">
                                     <a href="./lab-2.4.html" class="lab-description__link">Селектори тегу</a>
                                 </li>
-                                <li class="lab-description__item short">
+                                <li class="lab-description__item short active">
                                     <a href="./lab-2.5.html" class="lab-description__link">Селектори класу</a>
                                 </li>
                                 <li class="lab-description__item short">
@@ -100,52 +102,42 @@
                                     <a href="./lab-2.7.html" class="lab-description__link">Інші селектори</a>
                                 </li>
                                 <li class="lab-description__item">
-                                    <a href="./lab-2.8.html" class="lab-description__link">CSS: Шрифти, текст, таблиці, фон, контур,
+                                    <a href="./lab-2.8.html" class="lab-description__link">CSS: Шрифти, текст, таблиці,
+                                        фон, контур,
                                         списки, CSS просунутий</a>
                                 </li>
                             </ul>
                         </aside>
                         <div class="lab-description__text">
                             <p>
-                                <span>Код стилів, де використовуються лише селектори тегів:</span>
+                                <span>Застосування селектору класу у моїй роботі:</span>
                             </p>
-                            <pre>
-body {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: #fff;
-    background-color: #bb9457;
-    line-height: 1.5;
-}
-
-header {
-    background-color: #fff;
-}
-
-form {
+                            <p>
+                                <span>HTML-код елемента:</span>
+                            </p>
+                            <pre class="example">
+&lt;div class="about-info"&gt;
+    &lt;p class="about-info__text"&gt;
+        "Смачна Пауза" - це більше, ніж просто кав’ярня. Наша концепція полягає у створенні
+        привітного та дружнього середовища, де кожен може відчути себе як вдома. Ми прагнемо
+        забезпечити нашим клієнтам вищий рівень обслуговування та якісних продуктів, щоб
+        кожне відвідування "Смачної Паузи" стало приємним і запам'ятовуваним досвідом.
+    &lt;/p&gt;
+    &lt;img src="../img/about-2.jpg" alt="" class="about-info__img"&gt;
+&lt;/div&gt;</pre>
+                            <p>
+                                <span>CSS-код елемента:</span>
+                            </p>
+                            <pre class="example">
+.about-info {
     display: flex;
-    flex-direction: column;
-    max-width: 926px;
-    border-radius: 20px;
-    margin: 0 auto;
-    padding: 36px 254px;
-    background-color: #99582a;
-}
-
-input {
-    height: 44px;
-    border: 2px solid #bb9457;
-    border-radius: 20px;
-    padding: 13px 0 13px 19px;
-}
-
-footer {
-    background-color: #99582a;
-    padding: 18px 0;
-}
-                         
-                            </pre>
+    align-items: center;
+    justify-content: space-between;
+}</pre>
+                            <p>
+                                <span>Вигляд елемента у браузері:</span>
+                            </p>
+                            <img src="../img/2.5.1.png" alt="" class="screenshot">
                         </div>
                     </div>
                 </div>
