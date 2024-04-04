@@ -78,11 +78,13 @@
                         <aside class="lab-description__aside">
                             <ul class="lab-description__list">
                                 <li class="lab-description__item">
-                                    <a href="./lab-2.1.html" class="lab-description__link">Тема, мета ЛР №2. Місце розташування
+                                    <a href="./lab-2.1.html" class="lab-description__link">Тема, мета ЛР №2. Місце
+                                        розташування
                                         сайту, звіту</a>
                                 </li>
                                 <li class="lab-description__item active">
-                                    <a href="./lab-2.2.html" class="lab-description__link">Способи підключення стилів</a>
+                                    <a href="./lab-2.2.html" class="lab-description__link">Способи підключення
+                                        стилів</a>
                                 </li>
                                 <li class="lab-description__item big">
                                     <a href="./lab-2.3.html" class="lab-description__link">СЕЛЕКТОРИ</a>
@@ -100,13 +102,116 @@
                                     <a href="./lab-2.7.html" class="lab-description__link">Інші селектори</a>
                                 </li>
                                 <li class="lab-description__item">
-                                    <a href="./lab-2.8.html" class="lab-description__link">CSS: Шрифти, текст, таблиці, фон, контур,
+                                    <a href="./lab-2.8.html" class="lab-description__link">CSS: Шрифти, текст, таблиці,
+                                        фон, контур,
                                         списки, CSS просунутий</a>
                                 </li>
                             </ul>
                         </aside>
                         <div class="lab-description__text">
-                            
+                            <p>Існують кілька способів підключення стилів CSS до HTML-сторінки:</p>
+                            <p>
+                                <span>1. Зовнішні стилі</span>
+                            </p>
+                            <p>
+                                Застосовуються за допомогою елемента &lt;link&gt;, який повинен розташовуватися
+                                всередині
+                                елемента &lt;head&gt;.
+                            </p>
+                            <pre class="example">
+&lt;head&gt;
+    ...
+    &lt;link rel="stylesheet" type="text/css" href="styles.css"&gt;
+    ...
+&lt;/head&gt;                            </pre>
+                            <p>
+                                Зустрівши в HTML-документі цей тег, браузер завантажить із сайту CSS-файл і застосує
+                                стилі, що містяться в ньому. Шлях до файлу вказують в атрибуті
+                                href
+                                (у нашому випадку це styles.css).
+                            </p>
+                            <p>
+                                Такий підхід зручний тим, що спільні для декількох документів стилі можна винести в
+                                окремий файл і додавати їх тегом &lt;link&gt;, не дублюючи один і той же CSS-код в
+                                кожному з цих
+                                документів.
+                            </p>
+                            <p>
+                                <span>2. Таблиці стилів документу</span>
+                            </p>
+                            <p>
+                                Називаються так тому, що розташовуються безпосередньо в HTML-документі і застосовуються
+                                лише до нього. CSS-стилі та коментарі розташовуються між тегами, що відкривають і
+                                закривають елемент
+                                &lt;style&gt;
+                                :
+                            </p>
+                            <pre class="example">
+&lt;style type="text/css"&gt;
+    ...
+    p {
+        color: #333333;
+        text-align: justify;
+    }
+    ...
+&lt;/style&gt;             </pre>
+                            <p>
+                                Зазвичай тег &lt;style&gt; розміщують всередині елементу &lt;head&gt;, хоча він може
+                                знаходитися в
+                                будь-якій частині документу.
+                            </p>
+                            <p>
+                                <span>3. Inline-стилі</span>
+                            </p>
+                            <p>
+                                Якщо необхідно задати стиль певному елементу на сторінці, не застосовуючи зовнішніх
+                                стилів і елемента style, можна скористатись атрибутом
+                                style
+                                цього елементу:
+                            </p>
+                            <pre class="example">
+&lt;p style="color: red"&gt;Абзац з літерами червоного кольору&lt;/p&gt;</pre>
+                            <p>
+                                Всередині атрибуту style можна вказати декілька CSS-правил, які слід розділити крапкою з
+                                комою.
+                            </p>
+                            <pre class="example">
+&lt;p style="color: blue; font-weight: bold"&gt;...&lt;/p&gt;</pre>
+                            <p>
+                                Атрибут style є майже у всіх HTML-елементів, окрім тих, що розташовуються поза елементом
+                                &lt;body&gt;.
+                            </p>
+                            <p>
+                                <span>4. Правило @import</span>
+                            </p>
+                            <p>
+                                Правило @import дозволяє імпортувати (завантажити) вміст CSS-файлу в поточну стильову
+                                таблицю.
+                            </p>
+                            <pre class="example">
+&lt;style type="text/css"&gt;
+    @import url(styles/reset.css);
+    @import url(styles/form.css);
+    ...
+    p {
+        color: #333333;
+        text-align: justify;
+    }
+    ...
+&lt;/style&gt;</pre>
+                            <p>
+                                <span>Підключення стилів у моїй роботі:</span>
+                            </p>
+                            <p>
+                                Під час розробки мого веб-додатка я використовувала метод підключення стилів за
+                                допомогою тегу &lt;link&gt;. Для цього я створила окремий файл з розширенням .css, де
+                                оформила всі необхідні стилі для моїх елементів. Після цього я додала тег &lt;link&gt; у
+                                розділ &lt;head&gt; мого HTML-документа і вказала шлях до мого файлу зі стилями у
+                                атрибуті href. Цей метод дозволив мені зберігати стилі в окремому файлі, що полегшило їх
+                                керування і редагування, а також підвищило читабельність коду моєї веб-сторінки.
+                            </p>
+                            <pre class="example">
+&lt;link rel="stylesheet" href="../css/style.css"&gt;</pre>
                         </div>
                     </div>
                 </div>
