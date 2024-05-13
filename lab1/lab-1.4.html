@@ -60,16 +60,10 @@
                             <a href="../lab5/lab-5.1.html" class="lab-works__link">Лабораторна робота №5</a>
                         </li>
                         <li class="lab-works__item">
-                            <a href="../lab6/lab-6.1.html" class="lab-works__link">Лабораторна робота №6</a>
+                            <a href="../lab6-7/lab-6-7.1.html" class="lab-works__link">Лабораторна робота №6-7</a>
                         </li>
                         <li class="lab-works__item">
-                            <a href="../lab7/lab-7.1.html" class="lab-works__link">Лабораторна робота №7</a>
-                        </li>
-                        <li class="lab-works__item">
-                            <a href="../lab8/lab-8.1.html" class="lab-works__link">Лабораторна робота №8</a>
-                        </li>
-                        <li class="lab-works__item">
-                            <a href="../lab9/lab-9.1.html" class="lab-works__link">Лабораторна робота №9</a>
+                            <a href="../lab8-9/lab-8-9.1.html" class="lab-works__link">Лабораторна робота №8-9</a>
                         </li>
                     </ul>
                 </div>
@@ -264,8 +258,30 @@
             </section>
         </main>
     </div>
+    <script>
+       function scrollToBottom() {
+    // Зберігаємо поточну позицію скролу
+    const currentScroll = window.scrollY;
 
-    <script src="../scroll.js"></script>
+    // Виконуємо скрол до самого низу
+    window.scrollTo(0, document.body.scrollHeight);
+
+    // Після короткої затримки перевіряємо і встановлюємо плавний скрол
+    setTimeout(() => {
+        if (window.scrollY !== currentScroll) {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+    }, 100); // Затримка в 100 мілісекунд
+}
+
+scrollToBottom();
+
+
+
+    </script>
 </body>
 
 </html>
