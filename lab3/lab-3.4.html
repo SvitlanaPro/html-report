@@ -79,7 +79,7 @@
                                         розташування
                                         сайту, звіту</a>
                                 </li>
-                                <li class="lab-description__item">
+                                <li class="lab-description__item ">
                                     <a href="./lab-3.2.html" class="lab-description__link">ЗАВДАННЯ №1. Зовнішній вигляд
                                         макету. Код макету</a>
                                 </li>
@@ -103,29 +103,120 @@
                                     <a href="./lab-3.8.html" class="lab-description__link">ЗАВДАННЯ №3. FlexBox</a>
                                 </li>
                                 <li class="lab-description__item short">
-                                    <a href="./lab-3.9.html" class="lab-description__link">Скріншот сторінки
+                                    <a href="./lab-3.8.html" class="lab-description__link">Скріншот сторінки
                                         (FlexBox)</a>
                                 </li>
                                 <li class="lab-description__item short">
-                                    <a href="./lab-3.10.html" class="lab-description__link">HTML-код (FlexBox)</a>
+                                    <a href="./lab-3.9.html" class="lab-description__link">HTML-код (FlexBox)</a>
                                 </li>
                                 <li class="lab-description__item short">
-                                    <a href="./lab-3.11.html" class="lab-description__link">CSS-код (FlexBox)</a>
+                                    <a href="./lab-3.10.html" class="lab-description__link">CSS-код (FlexBox)</a>
                                 </li>
                                 <li class="lab-description__item">
-                                    <a href="./lab-3.12.html" class="lab-description__link">Висновки</a>
+                                    <a href="./lab-3.11.html" class="lab-description__link">Висновки</a>
                                 </li>
                             </ul>
                         </aside>
                         <div class="lab-description__text">
                             <p><span>1. HTML-код:</span></p>
                             <pre class="example">
-
-                            </pre>
+&lt;table&gt;
+&lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td colspan="6" class="table__header"&gt;
+            &lt;input type="search" placeholder="Пошук..."&gt;
+            1
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td rowspan="4" class="header__left"&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class="row-empty"&gt;&lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="col-empty"&gt;&lt;/td&gt;
+        &lt;td class="header__center"&gt;3&lt;/td&gt;
+        &lt;td class="col-empty"&gt;&lt;/td&gt;
+        &lt;td class="header__right"&gt;4&lt;/td&gt;
+        &lt;td class="col-empty"&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr class="row-empty"&gt;&lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td colspan="6" class="table__footer"&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</pre>
                             <p><span>2. CSS-код:</span></p>
                             <pre class="example">
+table {
+    border-collapse: collapse;
+    max-width: 500px;
+    min-width: 500px;
+    max-height: 500px;
+    min-height: 500px;
+    font-weight: 600;
+    background-color: #fff;
+}
 
-                            </pre>
+table,
+td {
+    border: 2px solid #000;
+}
+
+.col-empty {
+    width: 20px;
+    border: none;
+}
+
+.row-empty {
+    height: 20px;
+}
+
+.table__header {
+    position: relative;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.table__header input {
+    background-color: #fff;
+    border: 2px solid #000;
+    width: 160px;
+    float: inline-start;
+    padding: 0 3px;
+}
+
+.header__center {
+    position: relative;
+    text-align: center;
+    border: 2px solid gray;
+}
+
+.header__center::after {
+    content: '';
+    position: absolute;
+    height: 40px;
+    background-color: tomato;
+    bottom: -2px;
+    right: -2px;
+    left: -2px;
+    border: 2px solid #000;
+}
+
+.header__left,
+.header__right {
+    background-color: royalblue;
+    text-align: center;
+}
+
+.table__header,
+.table__footer {
+    background-color: gold;
+    height: 50px;
+}
+
+.table__footer {
+    text-align: center;
+}</pre>
                             <p><span>3. Результат:</span></p>
                             <table>
                                 <tbody>
@@ -157,8 +248,10 @@
                             <style>
                                 table {
                                     border-collapse: collapse;
-                                    width: 60%;
-                                    height: 500px;
+                                    max-width: 500px;
+                                    min-width: 500px;
+                                    max-height: 500px;
+                                    min-height: 500px;
                                     font-weight: 600;
                                     background-color: #fff;
                                 }
@@ -224,14 +317,6 @@
                                     text-align: center;
                                 }
                             </style>
-
-
-
-
-
-
-
-
                         </div>
                     </div>
                 </div>
@@ -239,12 +324,26 @@
         </main>
     </div>
     <script>
+        function scrollToBottom() {
+            const currentScroll = window.scrollY;
+            window.scrollTo(0, document.body.scrollHeight);
+            setTimeout(() => {
+                if (window.scrollY !== currentScroll) {
+                    window.scrollTo({
+                        top: document.body.scrollHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 100);
+        }
+        scrollToBottom();
         $(document).ready(function () {
             $("table").resizable({
                 handles: 'e, s, se'
             });
         });
     </script>
+
 </body>
 
 </html>

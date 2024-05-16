@@ -100,17 +100,17 @@
                                     <a href="./lab-3.8.html" class="lab-description__link">ЗАВДАННЯ №3. FlexBox</a>
                                 </li>
                                 <li class="lab-description__item short">
-                                    <a href="./lab-3.9.html" class="lab-description__link">Скріншот сторінки
+                                    <a href="./lab-3.8.html" class="lab-description__link">Скріншот сторінки
                                         (FlexBox)</a>
                                 </li>
                                 <li class="lab-description__item short">
-                                    <a href="./lab-3.10.html" class="lab-description__link">HTML-код (FlexBox)</a>
+                                    <a href="./lab-3.9.html" class="lab-description__link">HTML-код (FlexBox)</a>
                                 </li>
                                 <li class="lab-description__item short">
-                                    <a href="./lab-3.11.html" class="lab-description__link">CSS-код (FlexBox)</a>
+                                    <a href="./lab-3.10.html" class="lab-description__link">CSS-код (FlexBox)</a>
                                 </li>
                                 <li class="lab-description__item">
-                                    <a href="./lab-3.12.html" class="lab-description__link">Висновки</a>
+                                    <a href="./lab-3.11.html" class="lab-description__link">Висновки</a>
                                 </li>
                             </ul>
                         </aside>
@@ -536,7 +536,21 @@ body {
             </section>
         </main>
     </div>
-
+    <script>
+        function scrollToBottom() {
+            const currentScroll = window.scrollY;
+            window.scrollTo(0, document.body.scrollHeight);
+            setTimeout(() => {
+                if (window.scrollY !== currentScroll) {
+                    window.scrollTo({
+                        top: document.body.scrollHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 100);
+        }
+        scrollToBottom();
+    </script>
 </body>
 
 </html>

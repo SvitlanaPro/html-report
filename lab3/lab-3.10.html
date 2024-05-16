@@ -8,6 +8,9 @@
     <link rel="icon" href="../img/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../css/normalize.css">
@@ -71,7 +74,7 @@
                     <div class="lab-description__wrapper">
                         <aside class="lab-description__aside">
                             <ul class="lab-description__list">
-                                <li class="lab-description__item active">
+                                <li class="lab-description__item">
                                     <a href="./lab-3.1.html" class="lab-description__link">Тема, мета ЛР №3. Місце
                                         розташування
                                         сайту, звіту</a>
@@ -96,7 +99,7 @@
                                 <li class="lab-description__item short">
                                     <a href="./lab-3.7.html" class="lab-description__link">Гумова блокова верстка</a>
                                 </li>
-                                <li class="lab-description__item big">
+                                <li class="lab-description__item big active">
                                     <a href="./lab-3.8.html" class="lab-description__link">ЗАВДАННЯ №3. FlexBox</a>
                                 </li>
                                 <li class="lab-description__item short">
@@ -106,7 +109,7 @@
                                 <li class="lab-description__item short">
                                     <a href="./lab-3.9.html" class="lab-description__link">HTML-код (FlexBox)</a>
                                 </li>
-                                <li class="lab-description__item short">
+                                <li class="lab-description__item short active">
                                     <a href="./lab-3.10.html" class="lab-description__link">CSS-код (FlexBox)</a>
                                 </li>
                                 <li class="lab-description__item">
@@ -115,28 +118,238 @@
                             </ul>
                         </aside>
                         <div class="lab-description__text">
-                            <h2 class="description__text-topic">
-                                "ВЕРСТКА HTML-ДОКУМЕНТУ. БЛОКОВА ВЕРСТКА. ВЕРСТКА ЗАСОБАМИ CSS та FLEXBOX"
-                            </h2>
-                            <p>
-                                <span>Мета: </span> 
-                                придбати практичні навички роботи верстки сторінок засобами CSS, верстки на основі плаваючих елементів, з’ясувати переваги та недоліки типів макетів веб-сторінок та придбати практичні навички роботи верстки сторінок засобами CSS та FLEXBOX
-                            </p>
-                            <p>
-                                <span>Посилання на виконані завдання лабораторної роботи:</span>
-                            </p>
-                            <div class="description__text-links">
-                                <a href="https://kasyaaaak.github.io/website-flowers/" class="description__text-link"
-                                    target="_blank">
-                                    <img class="description__text-icon" src="../img/link.svg" alt="">
-                                    Власний WEB-застосунок (GitHub)
-                                </a>
-                                <a href="https://kasyaaaak.github.io/flexbox-website/" class="description__text-link"
-                                    target="_blank">
-                                    <img class="description__text-icon" src="../img/link.svg" alt="">
-                                    Власний WEB-застосунок (FlexBox) (GitHub)
-                                </a>
-                            </div>
+                            <p><span>CSS - код:</span></p>
+                            <pre class="example">
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+}
+    
+.container {
+    max-width: 1230px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+    
+.header {
+    padding: 25px 0;
+    background-color: #292929;
+}
+    
+.menu__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+    
+.menu__list-item {
+    color: #fff;
+    font-weight: 600;
+}
+    
+.menu__list-link {
+    transition: all 0.3s ease;
+}
+    
+.menu__list-link:hover {
+    color: #ff9638;
+}
+    
+select {
+    font-weight: 600;
+    outline: none;
+}
+    
+select option {
+    color: #000;
+    font-weight: 500;
+}
+    
+.course {
+    padding: 100px 0;
+}
+    
+.course__subtitle {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 26px;
+    color: #ff9638;
+}
+    
+.course__title {
+    line-height: 36px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 50px;
+}
+    
+.course__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+    
+.course__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+    
+.course__list-title {
+    position: relative;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 16px;
+    margin-bottom: 10px;
+}
+    
+.course__list-title::before {
+    content: "";
+    display: block;
+    width: 13px;
+    height: 13px;
+    background: #ff9638;
+    border: 3px solid #292929;
+    border-radius: 50%;
+    position: absolute;
+    left: -23px;
+    top: 1px;
+}
+    
+.course__list-text {
+    line-height: 24px;
+    text-align: justify;
+}
+    
+.graduates {
+    background-color: #292929;
+    padding: 30px 0;
+}
+    
+.graduates__title {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 36px;
+}
+    
+.graduates__subtitle {
+    text-transform: uppercase;
+    text-align: center;
+    color: #3298f2;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 26px;
+    margin-bottom: 50px;
+}
+    
+.graduates__imgbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+    
+.graduate-img {
+    width: 30%;
+    border-radius: 5px;
+}
+    
+.questions {
+    padding: 30px 0;
+}
+    
+.big-container {
+    max-width: 1530px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+    
+.questions__title {
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 26px;
+    color: #3298f2;
+    text-align: center;
+}
+    
+.questions__subtitle {
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+    
+.questions__contentbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.questions__textbox {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.questions__textbox-item {
+    min-height: 145px;
+}
+
+.questions__textbox-title {
+    color: #ff9638;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 26px;
+    margin-bottom: 15px;
+}
+
+.questions__textbox-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.footer {
+    background-color: #ff9638;
+    padding: 30px 0;
+}
+
+.footer__textbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__left {
+    font-size: 35px;
+    max-width: 670px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.footer__right {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 20px;
+
+}</pre>
                         </div>
                     </div>
                 </div>
