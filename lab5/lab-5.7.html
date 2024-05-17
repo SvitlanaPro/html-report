@@ -74,7 +74,7 @@
                                 <li class="lab-description__item">
                                     <a href="./lab-5.1.html" class="lab-description__link">ПОСТАНОВКА ЗАДАЧІ ЛР№5</a>
                                 </li>
-                                <li class="lab-description__item big active">
+                                <li class="lab-description__item big">
                                     <a href="./lab-5.2.html" class="lab-description__link">Способи функціонального
                                         застосування JavaScript</a>
                                 </li>
@@ -87,13 +87,13 @@
                                 <li class="lab-description__item short">
                                     <a href="./lab-5.4.html" class="lab-description__link">Підстановка (entity)</a>
                                 </li>
-                                <li class="lab-description__item short active">
+                                <li class="lab-description__item short">
                                     <a href="./lab-5.5.html" class="lab-description__link">Вставка (тег script)</a>
                                 </li>
                                 <li class="lab-description__item big">
                                     <a href="./lab-5.6.html" class="lab-description__link">Масиви (4 пункт)</a>
                                 </li>
-                                <li class="lab-description__item big">
+                                <li class="lab-description__item big active">
                                     <a href="./lab-5.7.html" class="lab-description__link">Виконання 6-го пункту</a>
                                 </li>
                                 <li class="lab-description__item big">
@@ -102,23 +102,117 @@
                             </ul>
                         </aside>
                         <div class="lab-description__text">
-                            <p>Тег &lt;script&gt; використовується для вставки JS-коду в HTML-документ. Є два основні
-                                способи вставки скриптів:</p>
-                            <p><span>1. Вбудований (inline) JS-код:</span></p>
-                            <p>JS-код пишеться безпосередньо всередині тега &lt;script&gt;> у HTML-документі.</p>
+                            <p><span>1. HTML - код:</span></p>
                             <pre class="example">
-&lt;script&gt;
-    console.log('Привіт, світ!');
-&lt;script&gt;</pre>
-                            <p><span>2. Підключення зовнішнього файлу:</span></p>
-                            <p>JS-код може бути збережений у зовнішньому файлі, який підключається до HTML-документа за
-                                допомогою атрибута src.</p>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Текстовий редактор&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="toolbar"&gt;
+        &lt;button onclick="formatText('bold')"&gt;Напівжирний&lt;/button&gt;
+        &lt;button onclick="formatText('italic')"&gt;Нахилений&lt;/button&gt;
+        &lt;button onclick="formatText('underline')"&gt;Підкреслений&lt;/button&gt;
+        &lt;input type="color" id="colorPicker" onchange="changeColor()"&gt;
+        &lt;button onclick="toggleCase()"&gt;Змінити регістр&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="editor" contenteditable="true"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        function formatText(command) {
+            document.execCommand(command, false, null);
+        }
+
+        function changeColor() {
+            const color = document.getElementById('colorPicker').value;
+            document.execCommand('foreColor', false, color);
+        }
+
+        function toggleCase() {
+            const editor = document.querySelector('.editor');
+            const selection = window.getSelection();
+            if (!selection.rangeCount) return;
+            const range = selection.getRangeAt(0);
+            const selectedText = range.toString();
+            if (!selectedText) return;
+            const isUpperCase = selectedText === selectedText.toUpperCase();
+            const newText = isUpperCase ? selectedText.toLowerCase() : selectedText.toUpperCase();
+            range.deleteContents();
+            range.insertNode(document.createTextNode(newText));
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                            <p><span>2. CSS - код:</span></p>
                             <pre class="example">
-&lt;script src="path/to/your/script.js">&lt;/script&gt;</pre>
-                            <p>Важливо розміщувати тег &lt;script&gt; у відповідному місці HTML-документа, щоб
-                                забезпечити правильну роботу скриптів. Зазвичай рекомендується вставляти скрипти перед
-                                закриваючим тегом &lt;/body&gt;, щоб скрипти завантажувалися після всього вмісту
-                                сторінки.</p>
+body {
+    font-family: Arial, sans-serif;
+}
+
+.toolbar {
+    margin-bottom: 10px;
+}
+
+.toolbar button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.toolbar input[type="color"] {
+    margin-right: 5px;
+}
+
+.editor {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 300px;
+    max-width: 600px;
+} </pre>
+                            <p><span>Результат:</span></p>
+                            <p>Для застосування форматування, потрібно виділити написаний текст, а вже потім застосовувати стилі.</p>
+                            <div class="toolbar">
+                                <button onclick="formatText('bold')">Напівжирний</button>
+                                <button onclick="formatText('italic')">Нахилений</button>
+                                <button onclick="formatText('underline')">Підкреслений</button>
+                                <button onclick="toggleCase()">Змінити регістр</button>
+                                <input type="color" id="colorPicker" onchange="changeColor()">
+                            </div>
+                            <div class="editor" contenteditable="true"></div>
+                            <style>
+                                .toolbar {
+                                    margin-bottom: 10px;
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 5px;
+                                }
+
+                                .toolbar button {
+                                    margin-right: 5px;
+                                    padding: 5px 10px;
+                                    cursor: pointer;
+                                    border: 1px solid #000;
+                                    background-color: #fff;
+                                    border-radius: 6px;
+                                }
+
+                                .toolbar input[type="color"] {
+                                    margin-right: 5px;
+                                }
+
+                                .editor {
+                                    border: 1px solid #ccc;
+                                    padding: 10px;
+                                    min-height: 300px;
+                                    max-width: 640px;
+                                    background-color: #fff;
+                                }
+                            </style>
                         </div>
                     </div>
                 </div>
@@ -139,6 +233,31 @@
             }, 100);
         }
         scrollToBottom();
+
+        function formatText(command) {
+            document.execCommand(command, false, null);
+        }
+
+        function changeColor() {
+            const color = document.getElementById('colorPicker').value;
+            document.execCommand('foreColor', false, color);
+        }
+
+        function toggleCase() {
+            const editor = document.querySelector('.editor');
+            const selection = window.getSelection();
+            if (!selection.rangeCount) return;
+            const range = selection.getRangeAt(0);
+            const selectedText = range.toString();
+            if (!selectedText) return;
+            const isUpperCase = selectedText === selectedText.toUpperCase();
+            const newText = isUpperCase ? selectedText.toLowerCase() : selectedText.toUpperCase();
+            range.deleteContents();
+            range.insertNode(document.createTextNode(newText));
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+
     </script>
 </body>
 

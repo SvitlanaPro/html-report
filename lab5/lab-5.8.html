@@ -74,7 +74,7 @@
                                 <li class="lab-description__item">
                                     <a href="./lab-5.1.html" class="lab-description__link">ПОСТАНОВКА ЗАДАЧІ ЛР№5</a>
                                 </li>
-                                <li class="lab-description__item big active">
+                                <li class="lab-description__item big">
                                     <a href="./lab-5.2.html" class="lab-description__link">Способи функціонального
                                         застосування JavaScript</a>
                                 </li>
@@ -87,38 +87,23 @@
                                 <li class="lab-description__item short">
                                     <a href="./lab-5.4.html" class="lab-description__link">Підстановка (entity)</a>
                                 </li>
-                                <li class="lab-description__item short active">
+                                <li class="lab-description__item short">
                                     <a href="./lab-5.5.html" class="lab-description__link">Вставка (тег script)</a>
                                 </li>
                                 <li class="lab-description__item big">
                                     <a href="./lab-5.6.html" class="lab-description__link">Масиви (4 пункт)</a>
                                 </li>
-                                <li class="lab-description__item big">
+                                <li class="lab-description__item big ">
                                     <a href="./lab-5.7.html" class="lab-description__link">Виконання 6-го пункту</a>
                                 </li>
-                                <li class="lab-description__item big">
+                                <li class="lab-description__item big active">
                                     <a href="./lab-5.8.html" class="lab-description__link">ВИСНОВКИ</a>
                                 </li>
                             </ul>
                         </aside>
                         <div class="lab-description__text">
-                            <p>Тег &lt;script&gt; використовується для вставки JS-коду в HTML-документ. Є два основні
-                                способи вставки скриптів:</p>
-                            <p><span>1. Вбудований (inline) JS-код:</span></p>
-                            <p>JS-код пишеться безпосередньо всередині тега &lt;script&gt;> у HTML-документі.</p>
-                            <pre class="example">
-&lt;script&gt;
-    console.log('Привіт, світ!');
-&lt;script&gt;</pre>
-                            <p><span>2. Підключення зовнішнього файлу:</span></p>
-                            <p>JS-код може бути збережений у зовнішньому файлі, який підключається до HTML-документа за
-                                допомогою атрибута src.</p>
-                            <pre class="example">
-&lt;script src="path/to/your/script.js">&lt;/script&gt;</pre>
-                            <p>Важливо розміщувати тег &lt;script&gt; у відповідному місці HTML-документа, щоб
-                                забезпечити правильну роботу скриптів. Зазвичай рекомендується вставляти скрипти перед
-                                закриваючим тегом &lt;/body&gt;, щоб скрипти завантажувалися після всього вмісту
-                                сторінки.</p>
+                            <p><span>Висновки:</span></p>
+                            <p>Під час лабораторної роботи я навчилася практично застосовувати JavaScript для взаємодії з HTML-документами, зокрема використовувати масиви у JS-сценаріях. Я зрозуміла, як за допомогою JavaScript можна динамічно змінювати вміст веб-сторінки, обробляти події, підставляти спеціальні символи (entity) та вставляти скрипти через тег `&lt;script&gt;`. Також я здобула навички маніпулювання масивами, включаючи їх створення, доступ до елементів, додавання та видалення даних, а також сортування і фільтрацію масивів. Це дозволило мені краще зрозуміти основні принципи програмування на JavaScript і підготувало до подальшого вивчення більш складних концепцій та технологій.</p>
                         </div>
                     </div>
                 </div>
@@ -139,6 +124,31 @@
             }, 100);
         }
         scrollToBottom();
+
+        function formatText(command) {
+            document.execCommand(command, false, null);
+        }
+
+        function changeColor() {
+            const color = document.getElementById('colorPicker').value;
+            document.execCommand('foreColor', false, color);
+        }
+
+        function toggleCase() {
+            const editor = document.querySelector('.editor');
+            const selection = window.getSelection();
+            if (!selection.rangeCount) return;
+            const range = selection.getRangeAt(0);
+            const selectedText = range.toString();
+            if (!selectedText) return;
+            const isUpperCase = selectedText === selectedText.toUpperCase();
+            const newText = isUpperCase ? selectedText.toLowerCase() : selectedText.toUpperCase();
+            range.deleteContents();
+            range.insertNode(document.createTextNode(newText));
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+
     </script>
 </body>
 

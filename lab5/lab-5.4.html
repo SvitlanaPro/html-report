@@ -79,27 +79,69 @@
                                         застосування JavaScript</a>
                                 </li>
                                 <li class="lab-description__item short">
-                                    <a href="./lab-5.2.html" class="lab-description__link">Обробник подій</a>
+                                    <a href="./lab-5.2.html" class="lab-description__link">Схема URL</a>
                                 </li>
                                 <li class="lab-description__item short">
-                                    <a href="./lab-5.3.html" class="lab-description__link">Підстановка (entity)</a>
+                                    <a href="./lab-5.3.html" class="lab-description__link">Обробник подій</a>
                                 </li>
                                 <li class="lab-description__item short active">
-                                    <a href="./lab-5.4.html" class="lab-description__link">Вставка (тег script)</a>
+                                    <a href="./lab-5.4.html" class="lab-description__link">Підстановка (entity)</a>
+                                </li>
+                                <li class="lab-description__item short">
+                                    <a href="./lab-5.5.html" class="lab-description__link">Вставка (тег script)</a>
                                 </li>
                                 <li class="lab-description__item big">
-                                    <a href="./lab-5.5.html" class="lab-description__link">Масиви (4 пункт)</a>
+                                    <a href="./lab-5.6.html" class="lab-description__link">Масиви (4 пункт)</a>
                                 </li>
                                 <li class="lab-description__item big">
-                                    <a href="./lab-5.6.html" class="lab-description__link">Виконання 6-го пункту</a>
+                                    <a href="./lab-5.7.html" class="lab-description__link">Виконання 6-го пункту</a>
                                 </li>
                                 <li class="lab-description__item big">
-                                    <a href="./lab-5.7.html" class="lab-description__link">ВИСНОВКИ</a>
+                                    <a href="./lab-5.8.html" class="lab-description__link">ВИСНОВКИ</a>
                                 </li>
                             </ul>
                         </aside>
                         <div class="lab-description__text">
-                            
+                            <p>Підстановки підтримуються лише браузером Netscape Navigator 4.0. Вони зустрічаються на
+                                Web-сторінках досить рідко. Тим не менш, це досить потужний інструмент генерації
+                                HTML-сторінки на стороні браузера. Підстановки мають формат: &{код_програми}; і
+                                використовуються як значення атрибутів HTML-контейнерів. У наступному прикладі поле
+                                введення INPUT буде мати, як значення за замовчуванням, адресу поточної сторінки, а
+                                розмір поля дорівнюватиме кількості символів у цій адресі.</p>
+                            <pre class="example">
+&lt;html&gt;
+&lt;head&gt;
+    &lt;script&gt;
+        function l() {
+            str = window.location.href; return (str.length);
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form&gt;
+        &lt;input type=text size="&{l()};" value="&{window.location.href};"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                            <p>У разі підстановки JavaScript-інтерпретатор отримує керування в момент аналізу браузером
+                                (компонент парсер) HTML-документа. Як тільки парсер зустрічає конструкцію &{..}; у
+                                атрибута контейнера, він передає керування JavaScript-інтерпретатору, який, у свою
+                                чергу, після виконання коду це керування повертає парсеру. Таким чином, дана операція
+                                аналогічна до підкачування графіки на HTML-сторінку.</p>
+                            <p>Очевидно, що розміщувати в заголовку документа генерацію тексту сторінки безглуздо - він
+                                не відображатиметься браузером. Тому в заголовок поміщають декларації загальних змінних
+                                та
+
+                                функцій, які потім використовуватимуться в тілі документа. Браузер Netscape Navigator
+                                більш вимогливий, ніж Internet Explorer. Якщо не розмістити опис функції в заголовку, то
+                                при її викликі в тілі документа можна отримати повідомлення про те, що ця функція не
+                                визначена.</p>
+                            <p>В Internet Explorer підстановки не підтримуються, тому користуватися ними слід акуратно.
+                                Перш ніж видати сторінку з підстановками браузеру, потрібно перевірити тип цього
+                                браузера. Альтернативою підстановкам Internet Explorer можна вважати динамічні
+                                властивості стилю. Наприклад, наступний фрагмент створить поле введення, ширина якого в
+                                пікселях (px) дорівнює кількості символів на адресі сторінки, помноженої на 10:</p>
+                            <pre class="example">&lt;INPUT TYPE=text style="width:expression(10*location.href.length+'px')"&gt;</pre>
                         </div>
                     </div>
                 </div>
