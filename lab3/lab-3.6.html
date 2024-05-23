@@ -120,6 +120,216 @@
                             </ul>
                         </aside>
                         <div class="lab-description__text">
+                            <p><span>1. HTML-код:</span></p>
+                            <pre class="example">
+&lt;div class="main-block"&gt;
+    &lt;div class="header-block"&gt;
+        &lt;input type="search" placeholder="Пошук..."&gt;
+        &lt;p&gt;1&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="content-box"&gt;
+        &lt;div class="content-block content-block-1"&gt;
+            &lt;p&gt;2&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="content-block content-block-2"&gt;
+            &lt;p&gt;3&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="content-block content-block-3"&gt;
+            &lt;p&gt;4&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="content-block content-block-4"&gt;
+            &lt;p&gt;5&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="footer-block"&gt;
+        &lt;p&gt;6&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                            <p><span>2. CSS-код:</span></p>
+                            <pre class="example">
+.main-block {
+    border: 2px solid #000;
+    background-color: #fff;
+    box-shadow: 5px 5px #898989;
+    font-weight: 600;
+
+}
+
+.main-block p {
+    margin: 0;
+}
+
+.header-block,
+.footer-block {
+    background-color: gold;
+    padding: 5px 10px;
+    height: 80px;
+}
+
+.header-block {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #000;
+
+}
+
+.header-block p {
+    margin: 0 auto;
+}
+
+input {
+    background-color: #fff;
+    border: 2px solid #000;
+    min-width: 400px;
+    height: 40px;
+    padding: 5px;
+}
+
+.content-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-block {
+    min-height: 400px;
+    min-width: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-block-1 {
+    background-color: royalblue;
+    border-right: 2px solid #000;
+}
+
+.content-block-2 {
+    background-color: tomato;
+    border-right: 2px solid #000;
+    border-left: 2px solid #000;
+}
+
+.content-block-3 {
+    background-color: #fff;
+    border-right: 2px solid #000;
+    border-left: 2px solid #000;
+}
+
+.content-block-4 {
+    background-color: tomato;
+    border-left: 2px solid #000;
+}
+
+.footer-block {
+    border-top: 2px solid #000;
+    display: flex;
+    align-items: center;
+}</pre>
+                            <p><span>3. Результат:</span></p>
+                            <div class="main-block">
+                                <div class="header-block">
+                                    <input type="search" placeholder="Пошук...">
+                                    <p>1</p>
+                                </div>
+                                <div class="content-box">
+                                    <div class="content-block content-block-1">
+                                        <p>2</p>
+                                    </div>
+                                    <div class="content-block content-block-2">
+                                        <p>3</p>
+                                    </div>
+                                    <div class="content-block content-block-3">
+                                        <p>4</p>
+                                    </div>
+                                    <div class="content-block content-block-4">
+                                        <p>5</p>
+                                    </div>
+                                </div>
+                                <div class="footer-block">
+                                    <p>6</p>
+                                </div>
+                            </div>
+                            <style>
+                                .main-block {
+                                    border: 2px solid #000;
+                                    background-color: #fff;
+                                    box-shadow: 5px 5px #898989;
+                                    font-weight: 600;
+                                }
+
+                                .main-block p {
+                                    margin: 0;
+                                }
+
+                                .header-block,
+                                .footer-block {
+                                    background-color: gold;
+                                    padding: 5px 10px;
+                                    height: 80px;
+                                }
+
+                                .header-block {
+                                    display: flex;
+                                    align-items: center;
+                                    border-bottom: 2px solid #000;
+
+                                }
+
+                                .header-block p {
+                                    margin: 0 auto;
+                                }
+
+                                input {
+                                    background-color: #fff;
+                                    border: 2px solid #000;
+                                    min-width: 400px;
+                                    height: 40px;
+                                    padding: 5px;
+                                }
+
+                                .content-box {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                }
+
+                                .content-block {
+                                    min-height: 400px;
+                                    min-width: 230px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+
+                                .content-block-1 {
+                                    background-color: royalblue;
+                                    border-right: 2px solid #000;
+                                }
+
+                                .content-block-2 {
+                                    background-color: tomato;
+                                    border-right: 2px solid #000;
+                                    border-left: 2px solid #000;
+                                }
+
+                                .content-block-3 {
+                                    background-color: #fff;
+                                    border-right: 2px solid #000;
+                                    border-left: 2px solid #000;
+                                }
+
+                                .content-block-4 {
+                                    background-color: tomato;
+                                    border-left: 2px solid #000;
+                                }
+
+                                .footer-block {
+                                    border-top: 2px solid #000;
+                                    display: flex;
+                                    align-items: center;
+                                }
+                            </style>
                         </div>
                     </div>
                 </div>

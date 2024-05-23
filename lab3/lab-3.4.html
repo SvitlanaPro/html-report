@@ -151,12 +151,11 @@
                             <pre class="example">
 table {
     border-collapse: collapse;
-    max-width: 500px;
-    min-width: 500px;
-    max-height: 500px;
-    min-height: 500px;
+    width: 100%;
+    height: 562px;
     font-weight: 600;
     background-color: #fff;
+    box-shadow: 5px 5px #898989;
 }
 
 table,
@@ -182,7 +181,8 @@ td {
 .table__header input {
     background-color: #fff;
     border: 2px solid #000;
-    width: 160px;
+    min-width: 400px;
+    height: 40px;
     float: inline-start;
     padding: 0 3px;
 }
@@ -210,10 +210,24 @@ td {
     text-align: center;
 }
 
+.header__left {
+    height: 400px;
+    min-width: 230px;
+    max-width: 230px;
+
+}
+
+.header__center,
+.header__right {
+    min-width: 299px;
+    max-width: 299px;
+    height: 400px;
+}
+
 .table__header,
 .table__footer {
     background-color: gold;
-    height: 50px;
+    height: 80px;
 }
 
 .table__footer {
@@ -250,12 +264,11 @@ td {
                             <style>
                                 table {
                                     border-collapse: collapse;
-                                    max-width: 500px;
-                                    min-width: 500px;
-                                    max-height: 500px;
-                                    min-height: 500px;
+                                    width: 100%;
+                                    height: 562px;
                                     font-weight: 600;
                                     background-color: #fff;
+                                    box-shadow: 5px 5px #898989;
                                 }
 
                                 table,
@@ -281,7 +294,8 @@ td {
                                 .table__header input {
                                     background-color: #fff;
                                     border: 2px solid #000;
-                                    width: 160px;
+                                    min-width: 400px;
+                                    height: 40px;
                                     float: inline-start;
                                     padding: 0 3px;
                                 }
@@ -309,10 +323,24 @@ td {
                                     text-align: center;
                                 }
 
+                                .header__left {
+                                    height: 400px;
+                                    min-width: 230px;
+                                    max-width: 230px;
+
+                                }
+
+                                .header__center,
+                                .header__right {
+                                    min-width: 299px;
+                                    max-width: 299px;
+                                    height: 400px;
+                                }
+
                                 .table__header,
                                 .table__footer {
                                     background-color: gold;
-                                    height: 50px;
+                                    height: 80px;
                                 }
 
                                 .table__footer {
@@ -339,11 +367,6 @@ td {
             }, 100);
         }
         scrollToBottom();
-        $(document).ready(function () {
-            $("table").resizable({
-                handles: 'e, s, se'
-            });
-        });
     </script>
 
 </body>
